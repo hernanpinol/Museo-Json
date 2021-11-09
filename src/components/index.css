@@ -1,0 +1,54 @@
+
+.navBar {
+  background: linear-gradient(180deg,rgba(184, 148, 96, 1) 0%,rgba(217, 186, 157, 1) 100%);
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  display: grid;
+  grid-template-areas:
+    "botoneraSuperior"
+    "botoneraInferior";
+  grid-template-rows: 50% 50%;
+  height: 70px;
+}
+.nav-top {
+  width: 90%;
+  margin: auto;
+  padding: 4px;
+  height: auto;
+  border-bottom: 1px solid #b38f58;
+  display: flex;
+  justify-content: center;
+}
+.nav-top h2 {
+  font-weight: 700;
+  color: #4f3434;
+  font-size: 1.2em;
+  margin: 0;
+}
+.nav-bottom {
+  width: 80%;
+  margin: auto;
+  padding: 4px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bottom ul {
+  list-style: none;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav-bottom ul li {
+  margin: 0px 20px;
+}
+.nav-bottom ul li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: white;
+  font-size: 1rem;
+}
