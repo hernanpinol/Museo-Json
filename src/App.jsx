@@ -1,10 +1,12 @@
 import {Fragment} from 'react';
-import NavBar from './components/NavBar'
+import ItemListContainer from './components/ItemList/ItemListContainer';
+import NavBar from './components/NavBar/NavBar'
 
 const App = () => {
   return (
     <Fragment>
       <NavBar />
+      <ItemListContainer greeting='Bienvenidos a nuestra tienda oficial!' />
     </Fragment>
   );
 }

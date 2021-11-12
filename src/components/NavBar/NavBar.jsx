@@ -1,9 +1,13 @@
+
+
+
+import CartWidget from "../Carrito/CartWidget";
 import "./index.css";
 
-const NavBar = () => {
+ const NavBar = () => {
   return (
     <>
-      <navbar className="navBar">
+      <div className="navBar">
         <div className="nav-top">
           <h2>Museo Histórico Regional de la Colonia San José</h2>
         </div>
@@ -22,10 +26,12 @@ const NavBar = () => {
               <a href="#">Merchandising</a>
             </li>
           </ul>
+          <CartWidget />
         </div>
-      </navbar>
+      </div>
+      
     </>
   );
 };
 
-export default NavBar;
+export default NavBar

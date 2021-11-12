@@ -1,0 +1,20 @@
+
+.greeting-page{
+    background-image: url(fondoTienda.JPG);
+    height: 100vh; 
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+    display: flex;
+	align-items: center;
+    justify-content: center;
+}
+
+.greeting{
+    font-size: 2.5rem;
+    color: #95192f;
+    text-align: center;
+    width: 40rem;
+    background-color: rgba(225, 225, 225, 0.7);
+    padding: 4rem;
+}
