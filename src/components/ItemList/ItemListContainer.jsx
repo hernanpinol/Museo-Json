@@ -1,15 +1,30 @@
-import ItemCount from "../ItemCount/itemCount"
-import "./itemListContainer.css"
+import { books } from "../ArrayProducts/arrayProducts";
+import { ItemList} from "./itemList";
+import "./itemListContainer.css";
 
-const ItemListContainer = (props) => {
-    return(
-        <>
-        <div className="greeting-page">
-            <h1 className="greeting"> {props.greeting}</h1>
-            <ItemCount />
-        </div>
-        </>
-    )
-}
+const ItemListContainer = () => {
+  
+  const listPromise =() =>{
+    return new Promise ((resolve, reject) =>{
+        if (true){
+            setTimeout(() => {
+                resolve (books)
+            }, 2000)
+        } else{
+            reject()
+        }
+    })
+  }
+  
+listPromise()
+ 
+return (
+    <>
+      <div className="greeting-page">
+        <ItemList />
+      </div>
+    </>
+  );
+};
 
-export default ItemListContainer
+export default ItemListContainer;

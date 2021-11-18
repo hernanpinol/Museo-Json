@@ -1,0 +1,41 @@
+.productContainer {
+  text-align: center;
+  width: 19rem;
+  background-color: rgba(225, 225, 225, 0.7);
+  padding: 2rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.productContainer img {
+  height: 20%;
+  margin: 3rem;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+h3 {
+  color: #95192f;
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+button {
+  background-color: #95192f;
+  border-radius: 8px;
+  height: auto;
+  width: auto;
+  color: white;
+  font-size: 1.2rem;
+  border: 0;
+  padding: 10px;
+  margin-top: 1rem;
+}
