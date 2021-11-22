@@ -1,7 +1,6 @@
-import { books } from "../ArrayProducts/arrayProducts";
 import { Item } from "./item";
 
-export const ItemList =() =>{
+export const ItemList =({books}) =>{
   return books.map((product) => {
     return (
       <Item

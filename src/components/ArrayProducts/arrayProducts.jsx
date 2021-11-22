@@ -5,7 +5,7 @@ export const books = [
     price: 850,
     stock: true,
     author: "Conte Grand",
-    image: "./assets/Images/libro1.jpg",
+    image: "/assets/Images/libro1.jpg",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const books = [
     price: 6000,
     stock: true,
     author: "Juan E. Rougie",
-    image: "./assets/Images/libro2.jpg",
+    image: "/assets/Images/libro2.jpg",
   },
   {
     id: 3,
@@ -21,6 +21,6 @@ export const books = [
     price: 2500,
     stock: true,
     author: "M. Carron",
-    image: "./assets/Images/libro3.jpg",
+    image: "/assets/Images/libro3.jpg",
   },
 ];
