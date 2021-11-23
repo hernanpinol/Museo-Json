@@ -1,27 +1,34 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { books } from "../ArrayProducts/arrayProducts";
 import "../ItemList/itemListContainer.css";
 import { ItemDetail } from "./itemDetail";
 
-const ItemDetailContainer = () => {
-    const [list, setList] = useState({});
-  
-    const getItemDetails = new Promise((resolve, reject) => {
+function ItemDetailContainer() {
+  const [list, setList] = useState({});
+
+  const getItemDetails = () => {
+    return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(books [0]);
+        resolve(books[0]);
       }, 2000);
     });
-  
-    getItemDetails.then(res => {
-        setList(res);
-      });
-    return (
-      <>
-        <div className="greeting-page">
-          <ItemDetail books={list} />
-        </div>
-      </>
-    );
   };
-  
-  export default ItemDetailContainer;
+
+  useEffect(() =>
+    getItemDetails().then((res) => {
+      setList(res);
+      console.log(list);
+    })
+  );
+
+  return (
+    <>
+      <div className="greeting-page">
+        <ItemDetail books={list} />
+      </div>
+    </>
+  );
+}
+
+export default ItemDetailContainer;

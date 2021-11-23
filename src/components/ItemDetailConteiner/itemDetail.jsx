@@ -1,21 +1,36 @@
-import { ProductsDetail } from "./productsDetail";
+import "./itemDetail.css";
 
 export const ItemDetail =({books}) =>{
       return (
-        <ProductsDetail
-          key={books.id}
-          name={books.name}
-          image={books.image}
-          author={books.author}
-          price={books.price}
-          stock={books.stock}
-          description={books.description}
-          language={books.language}
-          format={books.format}
-          pages={books.pages}
-          editorial={books.editorial}
-          year={books.year}
-        />
+        <>
+      <div className="itemDetailContainer">
+        <div className="itemDetailImg">
+          <img src={books.image} />
+        </div>
+        <div className="itemDetailDescription">
+          <div className="itemDetailTitle">
+            <h3>{books.name}</h3>
+            <p>
+              <strong>Autor:</strong> {books.author}
+            </p>
+            <p><strong>Stock: </strong>{books.stock}</p>
+          </div>
+          <div className="detailPrice">
+            <p>${books.price}</p>
+            <button>Comprar</button>
+          </div>
+          <div className="itemDescription">
+            <p><i>{books.description}</i></p>
+          </div>
+          <div className="detailSecondary">
+            <p><strong>Formato:</strong> {books.format}</p>
+            <p><strong>Editorial:</strong> {books.editorial}</p>
+            <p><strong>Nº de páginas:</strong> {books.pages}</p>
+            <p><strong>Año:</strong> {books.year}</p>
+          </div>
+        </div>
+      </div>
+    </>
       );
     };
   
