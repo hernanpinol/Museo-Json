@@ -4,7 +4,7 @@ export const ItemList =({books}) =>{
   return books.map((product) => {
     return (
       <Item
-        key={product.id}
+        id={product.id}
         name={product.name}
         image={product.image}
         author={product.author}

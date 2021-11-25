@@ -1,6 +1,9 @@
-
 .navBar {
-  background: linear-gradient(180deg,rgba(184, 148, 96, 1) 0%,rgba(217, 186, 157, 1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(184, 148, 96, 1) 0%,
+    rgba(217, 186, 157, 1) 100%
+  );
   width: 100%;
   position: fixed;
   top: 0px;
@@ -28,27 +31,22 @@
   margin: 0;
 }
 .nav-bottom {
-  width: 80%;
+  width: 40%;
   margin: auto;
   padding: 4px;
   height: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.nav-bottom ul {
-  list-style: none;
-  display: flex;
-  margin: 0px;
-  padding: 0px;
-}
-
-.nav-bottom ul li {
-  margin: 0px 20px;
-}
-.nav-bottom ul li a {
+.nav-bottom a {
   text-decoration: none;
   font-weight: 500;
   color: white;
   font-size: 1rem;
+}
+
+.navLink {
+  display: flex;
+  flex-direction: row;
 }

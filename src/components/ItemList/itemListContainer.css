@@ -1,16 +1,28 @@
 
-.greeting-page{
+.background{
     background-image: url(fondoTienda.JPG);
-    height: 100vh; 
+    background-attachment: fixed;
     background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
-	align-items: center;
+    align-items: center;
     justify-content: center;
 }
 
+.content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+	align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+}
 .greeting{
     font-size: 2.5rem;
     color: #95192f;

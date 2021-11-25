@@ -1,31 +1,30 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { books } from "../ArrayProducts/arrayProducts";
-import "../ItemList/itemListContainer.css";
+import React, { useState, useEffect } from "react";
+import { products } from "../ArrayProducts/arrayProducts";
 import { ItemDetail } from "./itemDetail";
+import "../ItemList/itemListContainer.css";
+import { useParams } from "react-router";
 
-function ItemDetailContainer() {
-  const [list, setList] = useState({});
+const ItemDetailContainer = () => {
+  const [item, setItem] = useState({});
+  const { itemId } = useParams({});
 
-  const getItemDetails = () => {
-    return new Promise((resolve, reject) => {
+  useEffect(() => {
+  const getItemDetails = new Promise((res) => {
       setTimeout(() => {
-        resolve(books[0]);
+        res(products);
       }, 2000);
     });
-  };
-
-  useEffect(() =>
-    getItemDetails().then((res) => {
-      setList(res);
-      console.log(list);
-    })
-  );
+  
+ getItemDetails.then((res) => {
+  itemId ? setItem(res.find((product) => product.id === itemId)):
+      setItem(res);
+    });
+  }, [itemId]);
 
   return (
     <>
-      <div className="greeting-page">
-        <ItemDetail books={list} />
+      <div className="background">
+        <ItemDetail {...item} />
       </div>
     </>
   );

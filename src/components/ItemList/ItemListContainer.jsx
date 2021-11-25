@@ -1,28 +1,34 @@
-import React, { useState } from "react";
-import { books } from "../ArrayProducts/arrayProducts";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { products } from "../ArrayProducts/arrayProducts";
 import { ItemList } from "./itemList";
 import "./itemListContainer.css";
 
 const ItemListContainer = () => {
   const [list, setList] = useState([]);
+  const { catId } = useParams();
 
-  const listPromise = new Promise((resolve, reject) => {
+
+useEffect(() => {
+  const listPromise = new Promise((resolve) => {
     setTimeout(() => {
-      resolve(books);
+      resolve(products);
     }, 2000);
   });
 
   listPromise.then(res => {
-      setList(res);
-    });
-
+    catId ? setList(res.filter((item) => item.category === catId)):setList(res);
+    } );
+  }, [catId]);
   return (
     <>
-      <div className="greeting-page">
-        <ItemList books={list} />
+      <div className="background">
+       <div className="content" ><ItemList books={list} /></div>
+        
       </div>
     </>
   );
+
 };
 
 export default ItemListContainer;
