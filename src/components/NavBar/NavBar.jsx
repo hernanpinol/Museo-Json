@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { CartWidget } from "../CartWidget/CartWidget";
-import { Logo } from "../Logo/logo";
+import escudo from "./EscudoMuseo.png";
 import "./index.css";
 
 const NavBar = () => {
@@ -16,6 +16,9 @@ const NavBar = () => {
         <div className="nav-top">
           <h2>Museo Histórico Regional de la Colonia San José</h2>
         </div>
+        <div className="logo">
+      <img src={escudo} height="65px" />
+    </div>
         <div className="nav-bottom">
           {categories.map((cat) => {
             return (
@@ -31,7 +34,6 @@ const NavBar = () => {
             );
           })}
           <CartWidget />
-          <Logo />
         </div>
       </section>
     </>

@@ -1,4 +1,4 @@
-export const products = [
+export const shopProducts = [
   {
     id: '1',
     category: 'books',

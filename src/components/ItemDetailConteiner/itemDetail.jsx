@@ -1,16 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAddToCart } from "../../contetx/cartContext";
 import "./itemDetail.css";
 
-export const ItemDetail = ({
-  id,
-  image,
-  name,
-  author,
-  stock,
-  price,
-  description,
-}) => {
+export const ItemDetail = (product) => {
+  const addToCart = useAddToCart();
+
+  const { id, image, name, author, stock, price, description } = product;
+
   return (
     <>
       <div className="itemDetailContainer">
@@ -30,8 +27,8 @@ export const ItemDetail = ({
           </div>
           <div className="detailPrice">
             <p>${price}</p>
-            <Link to= "">
-              <button>Comprar</button>
+            <Link to="">
+              <button onClick={() => addToCart(product)}>Comprar</button>
             </Link>
           </div>
           <div className="itemDescription">

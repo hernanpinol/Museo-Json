@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from "react";
-import { products } from "../ArrayProducts/arrayProducts";
+import React, { useState, useEffect, useContext } from "react";
+import { shopProducts } from "../ArrayProducts/arrayProducts";
 import { ItemDetail } from "./itemDetail";
 import "../ItemList/itemListContainer.css";
 import { useParams } from "react-router";
+import Products from "../../contetx/cartContext";
 
 const ItemDetailContainer = () => {
-  const [item, setItem] = useState({});
-  const { itemId } = useParams({});
-
-  useEffect(() => {
-  const getItemDetails = new Promise((res) => {
-      setTimeout(() => {
-        res(products);
-      }, 2000);
-    });
-  
- getItemDetails.then((res) => {
-  itemId ? setItem(res.find((product) => product.id === itemId)):
-      setItem(res);
-    });
-  }, [itemId]);
+  const { products } = useContext(Products)
 
   return (
     <>
       <div className="background">
-        <ItemDetail {...item} />
+      {
+      products?.map((product) => {
+        return (
+          <ItemDetail
+            id={product.id}
+            name={product.name}
+            image={product.image}
+            author={product.author}
+            price={product.price}
+            stock={product.stock}
+            description={product.description}
+          />
+        );
+      })}
       </div>
     </>
   );
